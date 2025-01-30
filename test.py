@@ -7,22 +7,22 @@ import os
 DELAY_MSEC 	= 5.0
 
 
-# set intial position for the quadruped
-def set_intial_pos(model, data):
+# # set intial position for the quadruped
+# def set_intial_pos(model, data):
     
-    for i in range(7, model.nq, 2):
+#     for i in range(7, model.nq, 2):
 
-        if(i == 7 or i == 11):
-            model.qpos0[i] = 0.94
-        else:
-            model.qpos0[i] = 0.5
+#         if(i == 7 or i == 11):
+#             model.qpos0[i] = 0.94
+#         else:
+#             model.qpos0[i] = 0.5
         
-        model.qpos0[i+1] = -1.6
+#         model.qpos0[i+1] = -1.6
 
 
 
 
-model = mujoco.MjModel.from_xml_path("./models/unitree_a1/unitree_a1/scene.xml")
+model = mujoco.MjModel.from_xml_path("./models/unitree_a1/unitree_a1/scene_new.xml")
 data = mujoco.MjData(model)
 mujoco.mj_resetDataKeyframe(model, data, 0)
 
@@ -35,7 +35,7 @@ viewer = mujoco_viewer.MujocoViewer(model, data)
 mujoco.mj_step(model,data)
 # t_start = time.time()
 
-set_intial_pos(model, data)
+# set_intial_pos(model, data)
 
 i = 0
 while viewer.is_alive:
