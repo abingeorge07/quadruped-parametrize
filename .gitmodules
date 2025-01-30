@@ -1,0 +1,3 @@
+[submodule "models/unitree_a1"]
+	path = models/unitree_a1
+	url = https://github.com/google-deepmind/mujoco_menagerie.git
